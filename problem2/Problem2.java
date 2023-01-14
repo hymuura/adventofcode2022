@@ -23,16 +23,7 @@ public class Problem2 {
         File file = new File(fileName);
         System.out.println(file.getAbsolutePath());
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        HashMap<String, Integer> scores = new HashMap<>();
-        scores.put("A X", 4);
-        scores.put("A Y", 8);
-        scores.put("A Z", 3);
-        scores.put("B X", 1);
-        scores.put("B Y", 5);
-        scores.put("B Z", 9);
-        scores.put("C X", 7);
-        scores.put("C Y", 2);
-        scores.put("C Z", 6);
+        HashMap<String, Integer> scores = loadValues();
 
         try {
             String line;
@@ -46,5 +37,19 @@ public class Problem2 {
         }
         long finish = System.currentTimeMillis();
         System.out.println(finish - start);
+    }
+
+    private static HashMap<String, Integer> loadValues(){
+        HashMap<String, Integer> scores = new HashMap<>();
+        scores.put("A X", 4);
+        scores.put("A Y", 8);
+        scores.put("A Z", 3);
+        scores.put("B X", 1);
+        scores.put("B Y", 5);
+        scores.put("B Z", 9);
+        scores.put("C X", 7);
+        scores.put("C Y", 2);
+        scores.put("C Z", 6);
+        return scores;
     }
 }
